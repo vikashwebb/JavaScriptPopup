@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custome popup Design in JavaScript</title>
+    <style>
+      .firstButton{border:none;background-color:teal;color:#fff;padding:4px 10px;margin:10px auto}
+      .firstButton:hover{outline:none;cursor:pointer;opacity:.8}
+      .firstButton:visited{outline:none}
+      .modal{position:absolute;width:100%;background:rgba(0,0,0,0.5);height:100%;top:0;left:0}
+      .modalBody{background-color:#fff;margin:5rem auto;width:769px;border-radius:5px}
+      .modalHeader{padding:1px 10px;border-bottom:1px solid #ccc}
+      .modalHeader span{float:right;font-size:14px;padding-right:5px}
+      .modalHeader span:hover{cursor:pointer}
+      .modalFooter{padding:5px 10px}
+      .modalContant{padding:5px 10px;border-bottom:1px solid #ccc}
+      .modalFooter{text-align:center}
+      .footerbtn{border:none;background-color:green;color:#fff;padding:10px 20px;margin:10px auto;border-radius:5px}
+      .footerbtn:hover{outline:none;cursor:pointer;opacity:.8}
+      .footerbtn:visited{outline:none}
+      .modalToggle{display:none}
+      @media screen and (max-width:679px) {
+      .modalBody{width:95%;margin:5rem auto}
+      }
+    </style>
+</head>
+<body>
+  <button id="modalBtn" class="firstButton">Click Me</button>
+
+  <div id="mainModal" class="modal modalToggle">
+      <div class="modalBody">
+        <div class="modalHeader">
+          <h2>Model Header <span onClick="closeFunction()" class="cross">&#10005;</span></h2>       
+        </div>
+        <div class="modalContant">
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+          </p>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+          </p>
+        </div>
+        <div class="modalFooter">
+          <button onClick="closeFunction()" class="footerbtn cross">OK</button>
+        </div>
+      </div>
+  </div>
+
+  <script>
+      document.getElementById("modalBtn").onclick = function (){clickFunction()}
+      var showModal = document.getElementById("mainModal");
+
+      function clickFunction(){
+        // alert("btn click function");
+        showModal.classList.remove("modalToggle");
+      }
+
+      function closeFunction(){
+        // alert("close Button");
+        showModal.classList.add("modalToggle");
+      }
+  
+  </script>
+</body>
+</html>
